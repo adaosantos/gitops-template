@@ -3,15 +3,15 @@ data "gitlab_group" "owner" {
 }
 
 resource "gitlab_group" "admins" {
-  name        = "admins"
-  path        = "admins"
+  name        = "<ADMINS_TEAM_NAME>"
+  path        = "<ADMINS_TEAM_NAME>"
   parent_id   = data.gitlab_group.owner.group_id
   description = "admins group"
 }
 
 resource "gitlab_group" "developers" {
-  name        = "developers"
-  path        = "developers"
+  name        = "<DEVS_TEAM_NAME>"
+  path        = "<DEVS_TEAM_NAME>"
   parent_id   = data.gitlab_group.owner.group_id
   description = "developers group"
 }

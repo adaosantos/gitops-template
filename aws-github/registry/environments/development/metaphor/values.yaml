@@ -4,14 +4,14 @@ metaphor:
   labels: |
     mirror.linkerd.io/exported: "true"
   image:
-    repository: <CONTAINER_REGISTRY_URL>/metaphor
+    repository: <CONTAINER_REGISTRY_URL>/<METAPHOR_REPOSITORY_NAME>
   imagePullSecrets:
     - name: docker-config
   ingress:
     className: nginx
     enabled: true
     annotations:
-      cert-manager.io/cluster-issuer: 'letsencrypt-prod'
+      cert-manager.io/cluster-issuer: "letsencrypt-prod"
       nginx.ingress.kubernetes.io/service-upstream: "true"
     hosts:
       - host: metaphor-development.<DOMAIN_NAME>
